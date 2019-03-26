@@ -1,0 +1,31 @@
+#product-table .id-field {
+    width: 100px;
+}
+
+#product-table .action-field {
+    width: 80px;
+}
+
+#product-table .publish-field {
+    width: 100px;
+}
+
+#product-table .status-field {
+    width: 120px;
+}
+
+#product-table .seller-field {
+    width: 120px;
+}
+
+.table .td-actions a i.view:hover {
+    background: rgba(0, 123, 255, .8);
+    color: #fff;
+}
+
+.full-scr-height {
+    min-height: calc(100vh - 120px);
+}
+.search-main>div{
+    flex: 1;
+}

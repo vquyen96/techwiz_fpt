@@ -1,0 +1,47 @@
+#change-password-modal .group.material-input {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+form#change_password_form label.error {
+    position: absolute;
+    top: 100%;
+    color: #e33;
+}
+ul.notification{
+    max-height: 60vh;
+    overflow: auto;
+}
+ul.notification::-webkit-scrollbar {
+    width: 4px;
+}
+ul.notification::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ul.notification::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.notification li.unread{
+    background: rgb(237, 242, 250);
+}
+.ws-nowrap{
+    white-space: nowrap;
+}
+
+table.dataTable thead .table-unsort .sorting,
+table.dataTable thead .table-unsort .sorting_asc,
+table.dataTable thead .table-unsort .sorting_desc {
+    background : none;
+}
+span.error {
+    color: #e44;
+    font-size: 11px;
+}
+label.error {
+    color: #e44;
+    font-size: 12px;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 5px;
+}

@@ -1,0 +1,14 @@
+.product-price {
+    color: #fe195e;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.full-scr-height {
+    min-height: calc(100vh - 120px);
+}
+
+label.error {
+    color: #e44;
+    font-size: 12px;
+}

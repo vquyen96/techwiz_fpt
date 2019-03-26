@@ -1,0 +1,9 @@
+.search-nav>div{
+    flex: 1;
+}
+.search-item{
+    padding: 0 10px;
+}
+.search-item label{
+    margin-right: 10px;
+}

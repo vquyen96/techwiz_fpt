@@ -1,0 +1,47 @@
+.img-w-120 {
+    width: 120px;
+}
+
+.user-rate {
+    text-align: center;
+    font-size: 30px;
+    color: #ffcc00;
+}
+
+#user-detail-sidebar .nav-item .active {
+    color: #e76c90;
+    background-color: #efefef;
+}
+
+#user-detail-sidebar .nav-item .active i {
+    color: #e76c90;
+}
+
+.user-product-tablee .id-field {
+    width: 100px;
+}
+
+.user-product-table .action-field {
+    width: 80px;
+}
+
+.user-product-table .publish-field {
+    width: 100px;
+}
+
+.user-product-table .status-field {
+    width: 120px;
+}
+
+.user-product-table .seller-field {
+    width: 120px;
+}
+
+.table .td-actions a i.view:hover {
+    background: rgba(0, 123, 255, .8);
+    color: #fff;
+}
+
+.full-scr-height {
+    min-height: calc(100vh - 120px);
+}

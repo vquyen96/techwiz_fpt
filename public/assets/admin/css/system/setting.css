@@ -1,0 +1,67 @@
+.full-scr-height {
+    min-height: calc(100vh - 120px);
+}
+
+.maintenance-toggle {
+    display: inline-block;
+}
+
+.maintenance-toggle .toggle-checkbox + span {
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.maintenance-toggle .toggle-checkbox + span>span {
+    width: 36px;
+    height: 36px;
+}
+
+.maintenance-toggle .toggle-checkbox:checked + span>span {
+    transform: translateX(40px);
+}
+
+.status-maintenance {
+    color: #fe195e;
+}
+
+.status-live {
+    color: #5cb85c;
+}
+
+.maintenance-text {
+    display: inline;
+    color: #fe195e;
+    -webkit-text-fill-color: #fe195e;
+    background: #fe195e;
+    background: linear-gradient(135deg,#fe195e 0%,#fe195e 80%);
+    -webkit-background-clip: text;
+}
+
+.radio-group .styled-radio {
+    margin-top: 10px;
+}
+
+.daterangepicker.dropdown-menu {
+    z-index: 1500;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.disabled-cursor {
+    cursor: no-drop;
+}
+
+tr.active{
+    background: #eef;
+}
+.btn-del-schedule{
+    cursor: pointer;
+    color: #e44;
+}
+.daterangepicker.dropup {
+     margin-top: 0 !important;
+}
+.daterangepicker.single .calendar {
+    margin: 7px !important;
+}
