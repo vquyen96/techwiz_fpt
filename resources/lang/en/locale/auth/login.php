@@ -1,6 +1,6 @@
 <?php
 return [
-    'welcome' => 'Welcome To RMT Admin',
+    'welcome' => 'Welcome To AMZ Admin',
     'signin' => 'Sign In',
     'email' => 'Email',
     'password' => 'Password',

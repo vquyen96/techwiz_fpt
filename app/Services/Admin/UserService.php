@@ -3,7 +3,6 @@
 namespace App\Services\Admin;
 
 use App\Enums\User\Role;
-use App\Repositories\ProductRepository;
 use App\Repositories\UserRepository;
 
 class UserService implements UserServiceInterface

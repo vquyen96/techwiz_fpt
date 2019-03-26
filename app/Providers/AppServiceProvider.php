@@ -35,10 +35,22 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Services\CategoryServiceInterface', 'App\Services\CategoryService');
         $this->app->bind('App\Services\LocationServiceInterface', 'App\Services\LocationService');
         $this->app->bind('App\Services\JobServiceInterface', 'App\Services\JobService');
+        $this->app->bind('App\Services\ImageServiceInterface', 'App\Services\ImageService');
+        $this->app->bind('App\Services\MailServiceInterface', 'App\Services\MailService');
+        $this->app->bind('App\Services\Admin\UserServiceInterface', 'App\Services\Admin\UserService');
+        $this->app->bind('App\Services\Admin\AuthServiceInterface', 'App\Services\Admin\AuthService');
+        $this->app->bind('App\Services\Admin\MailServiceInterface', 'App\Services\Admin\MailService');
+        $this->app->bind(
+            'App\Services\System\CronJobServiceInterface',
+            'App\Services\System\CronJobService'
+        );
+        $this->app->bind(
+            'App\Services\System\RequestExpiredServiceInterface',
+            'App\Services\System\RequestExpiredService'
+        );
         $this->app->bind('App\Services\GameServiceInterface', 'App\Services\GameService');
         $this->app->bind('App\Services\ProductServiceInterface', 'App\Services\ProductService');
         $this->app->bind('App\Services\ImageServiceInterface', 'App\Services\ImageService');
-        $this->app->bind('App\Services\MailServiceInterface', 'App\Services\MailService');
         $this->app->bind('App\Services\ProductTransferServiceInterface', 'App\Services\ProductTransferService');
         $this->app->bind('App\Services\ProductConfirmServiceInterface', 'App\Services\ProductConfirmService');
         $this->app->bind('App\Services\NotificationServiceInterface', 'App\Services\NotificationService');

@@ -65,6 +65,5 @@ class Kernel extends HttpKernel
         'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
         'admin' => \App\Http\Middleware\CheckAdminRole::class,
         'maintenance' => \App\Http\Middleware\CheckMaintenanceMode::class,
-        'locale' => \App\Http\Middleware\Locale::class,
     ];
 }

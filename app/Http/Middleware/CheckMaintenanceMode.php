@@ -7,13 +7,13 @@ use Closure;
 
 class CheckMaintenanceMode
 {
-    private $systemService;
-
-    public function __construct(
-        SystemServiceInterface $systemService
-    ) {
-        $this->systemService = $systemService;
-    }
+//    private $systemService;
+//
+//    public function __construct(
+//        SystemServiceInterface $systemService
+//    ) {
+//        $this->systemService = $systemService;
+//    }
 
     public function handle($request, Closure $next)
     {

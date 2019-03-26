@@ -38,9 +38,6 @@ Route::group([
         Route::post('signout', 'AuthController@signOut');
     });
 
-
     Route::get('categories', 'CategoryController@index');
     Route::get('locations', 'LocationController@index');
-
-
 });
