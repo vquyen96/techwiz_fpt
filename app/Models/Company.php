@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
+    protected $keyType = 'string';
+    public $incrementing = false;
+
     public $table = 'companies';
 
     public $fillable = [

@@ -15,7 +15,7 @@ class CreateCompanyLocationsTable extends Migration
     {
         Schema::create('company_locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('company_id');
+            $table->string('company_id', 15);
             $table->foreign('company_id')
                 ->references('id')->on('companies')
                 ->onDelete('cascade');

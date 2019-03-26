@@ -14,9 +14,13 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id');
+
+            $table->engine = 'InnoDB';
+
+            $table->string('id', 15)->primary();
             $table->string('name');
             $table->string('thumbnail')->nullable();
+            $table->string('cover')->nullable();
             $table->text('description')->nullable();
             $table->string('user_id', 15);
             $table->foreign('user_id')

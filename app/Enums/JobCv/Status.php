@@ -1,24 +1,20 @@
 <?php
-
-namespace App\Enums\Products;
+namespace App\Enums\JobCv;
 
 use App\Enums\BaseEnum;
 
-abstract class UserType extends BaseEnum
+abstract class Status extends BaseEnum
 {
-    const USER = 0;
-    const SELLER = 1;
-    const BUYER = 2;
+    const DEACTIVE = 0;
+    const ACTIVE = 1;
 
     public static function valueToEnum($value)
     {
         switch ($value) {
             case 0:
-                return self::USER;
+                return self::DEACTIVE;
             case 1:
-                return self::SELLER;
-            case 2:
-                return self::BUYER;
+                return self::ACTIVE;
             default:
                 return null;
         }
@@ -27,12 +23,10 @@ abstract class UserType extends BaseEnum
     public static function enumToValue($enum)
     {
         switch ($enum) {
-            case self::USER:
+            case self::DEACTIVE:
                 return 0;
-            case self::SELLER:
+            case self::ACTIVE:
                 return 1;
-            case self::BUYER:
-                return 2;
             default:
                 return null;
         }

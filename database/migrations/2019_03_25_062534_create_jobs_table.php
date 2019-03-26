@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\Job\Status;
+use App\Enums\Job\Type;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,21 +16,23 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id', 15)->primary();
             $table->string('title');
+            $table->string('salary');
             $table->text('benefit');
             $table->text('description');
             $table->text('requirement');
             $table->string('keyword');
             $table->string('language');
+            $table->integer('year_experience');
             $table->unsignedTinyInteger('rank');
-            $table->unsignedInteger('view');
-            $table->unsignedInteger('type');
-            $table->unsignedInteger('status');
+            $table->unsignedInteger('view')->default(0);
+            $table->unsignedInteger('type')->default(Type::NORMAL);
+            $table->unsignedInteger('status')->default(Status::ACTIVE);
             $table->unsignedTinyInteger('expired');
             $table->dateTime('expired_date');
             $table->dateTime('start_date');
-            $table->unsignedInteger('company_id');
+            $table->string('company_id', 15);
             $table->foreign('company_id')
                 ->references('id')->on('companies')
                 ->onDelete('cascade');

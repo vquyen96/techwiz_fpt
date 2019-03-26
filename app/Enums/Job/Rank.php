@@ -1,24 +1,23 @@
 <?php
-
-namespace App\Enums\Products;
+namespace App\Enums\Job;
 
 use App\Enums\BaseEnum;
 
-abstract class DeliveryMethod extends BaseEnum
+abstract class Rank extends BaseEnum
 {
-    const ONE_DAY = 0;
-    const TWO_DAYS = 1;
-    const THREE_DAYS = 2;
+    const EMPLOYEES = 0;
+    const LEADER = 1;
+    const MANAGER = 2;
 
     public static function valueToEnum($value)
     {
         switch ($value) {
             case 0:
-                return self::ONE_DAY;
+                return self::EMPLOYEES;
             case 1:
-                return self::TWO_DAYS;
+                return self::LEADER;
             case 2:
-                return self::THREE_DAYS;
+                return self::MANAGER;
             default:
                 return null;
         }
@@ -27,11 +26,11 @@ abstract class DeliveryMethod extends BaseEnum
     public static function enumToValue($enum)
     {
         switch ($enum) {
-            case self::ONE_DAY:
+            case self::EMPLOYEES:
                 return 0;
-            case self::TWO_DAYS:
+            case self::LEADER:
                 return 1;
-            case self::THREE_DAYS:
+            case self::MANAGER:
                 return 2;
             default:
                 return null;

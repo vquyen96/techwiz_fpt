@@ -8,6 +8,7 @@ abstract class Role extends BaseEnum
 {
     const USER = 0;
     const ADMIN = 1;
+    const EMPLOYER = 2;
 
     public static function valueToEnum($value)
     {
@@ -16,6 +17,8 @@ abstract class Role extends BaseEnum
                 return self::USER;
             case 1:
                 return self::ADMIN;
+            case 2:
+                return self::EMPLOYER;
             default:
                 return null;
         }
@@ -28,6 +31,8 @@ abstract class Role extends BaseEnum
                 return 0;
             case self::ADMIN:
                 return 1;
+            case self::EMPLOYER:
+                return 2;
             default:
                 return null;
         }

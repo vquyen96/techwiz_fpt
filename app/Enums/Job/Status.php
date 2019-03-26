@@ -1,21 +1,20 @@
 <?php
-
-namespace App\Enums\Notifications;
+namespace App\Enums\Job;
 
 use App\Enums\BaseEnum;
 
 abstract class Status extends BaseEnum
 {
-    const CREATE = 0;
-    const READ = 1;
+    const DEACTIVE = 0;
+    const ACTIVE = 1;
 
     public static function valueToEnum($value)
     {
         switch ($value) {
             case 0:
-                return self::CREATE;
+                return self::DEACTIVE;
             case 1:
-                return self::READ;
+                return self::ACTIVE;
             default:
                 return null;
         }
@@ -24,9 +23,9 @@ abstract class Status extends BaseEnum
     public static function enumToValue($enum)
     {
         switch ($enum) {
-            case self::CREATE:
+            case self::DEACTIVE:
                 return 0;
-            case self::READ:
+            case self::ACTIVE:
                 return 1;
             default:
                 return null;

@@ -1,27 +1,26 @@
 <?php
-
-namespace App\Enums\Notifications;
+namespace App\Enums\Job;
 
 use App\Enums\BaseEnum;
 
-abstract class Type extends BaseEnum
+abstract class Degree extends BaseEnum
 {
-    const SYSTEM = 0;
-    const BUY = 1;
-    const SELL = 2;
-    const CHAT = 3;
+    const GRADUATED = 0;
+    const CERTIFICATE = 1;
+    const COLLEGES = 2;
+    const UNIVERSITY = 3;
 
     public static function valueToEnum($value)
     {
         switch ($value) {
             case 0:
-                return self::SYSTEM;
+                return self::GRADUATED;
             case 1:
-                return self::BUY;
+                return self::CERTIFICATE;
             case 2:
-                return self::SELL;
+                return self::COLLEGES;
             case 3:
-                return self::CHAT;
+                return self::UNIVERSITY;
             default:
                 return null;
         }
@@ -30,13 +29,13 @@ abstract class Type extends BaseEnum
     public static function enumToValue($enum)
     {
         switch ($enum) {
-            case self::SYSTEM:
+            case self::GRADUATED:
                 return 0;
-            case self::BUY:
+            case self::CERTIFICATE:
                 return 1;
-            case self::SELL:
+            case self::COLLEGES:
                 return 2;
-            case self::CHAT:
+            case self::UNIVERSITY:
                 return 3;
             default:
                 return null;

@@ -40,4 +40,22 @@ Route::group([
 
     Route::get('categories', 'CategoryController@index');
     Route::get('locations', 'LocationController@index');
+
+    Route::group([
+        'middleware' => 'auth.jwt',
+        'prefix' => 'job',
+    ], function () {
+        Route::post('/', 'JobController@store');
+        Route::post('/{id}/apply', 'JobController@apply');
+        Route::post('/{id}/save', 'JobController@save');
+    });
+
+    Route::group([
+        'prefix' => 'job',
+    ], function () {
+        Route::get('/', 'JobController@index');
+        Route::get('/{id}', 'JobController@show');
+    });
+
+
 });

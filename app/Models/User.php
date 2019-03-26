@@ -60,61 +60,22 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function buyings()
+
+    public function company()
     {
-        return $this->hasMany('\App\Models\Buying');
+        return $this->hasOne('\App\Models\Company');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function favorites()
-    {
-        return $this->hasMany('\App\Models\Favorite');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function reviews()
-    {
-        return $this->hasMany('\App\Models\Review');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function products()
-    {
-        return $this->hasMany('\App\Models\Product');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function productTransactions()
-    {
-        return $this->hasMany('\App\Models\ProductTransaction');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
     public function passwordResets()
     {
         return $this->hasMany('\App\Models\PasswordReset');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function followings()
+    public function cvs()
     {
-        return $this->hasMany('\App\Models\Following');
+        return $this->hasMany('\App\Models\Cv');
     }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -127,10 +88,6 @@ class User extends Authenticatable implements JWTSubject
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function notifications()
-    {
-        return $this->hasMany('\App\Models\Notification');
-    }
 
     /**
      * @return array

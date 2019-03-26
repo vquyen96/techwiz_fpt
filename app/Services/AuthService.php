@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enums\User\Role;
 use App\Repositories\CompanyCategoryRepository;
 use App\Repositories\CompanyLocationRepository;
 use App\Repositories\CompanyRepository;
@@ -139,7 +140,7 @@ class AuthService implements AuthServiceInterface
                 'password' => Hash::make($data['password']),
                 'description' => '',
                 'avatar_url' => '',
-                'role' => 0,
+                'role' => Role::EMPLOYER,
                 'tel' => '',
                 'verified' => 1,
                 'status' => 1,
@@ -150,8 +151,10 @@ class AuthService implements AuthServiceInterface
                 'user_id' => $user->id,
                 'token' => str_random(63)
             ]);
+            $companyId = uniqid();
 
             $company = $this->companyRepository->create([
+                'id' => $companyId,
                 'name' => $data['company_name'],
                 'user_id' => $user->id,
                 'tel' => $data['company_tel'],
@@ -161,7 +164,7 @@ class AuthService implements AuthServiceInterface
             $categoriesInsert = [];
             foreach ($categories as $category) {
                 $insertItem = [
-                    'company_id' => $company->id,
+                    'company_id' => $companyId,
                     'category_id' => $category
                 ];
                 $categoriesInsert[] = $insertItem;
@@ -172,7 +175,7 @@ class AuthService implements AuthServiceInterface
             $locations = [];
             foreach ($locationIds as $locationId) {
                 $insertItem = [
-                    'company_id' => $company->id,
+                    'company_id' => $companyId,
                     'location_id' => $locationId
                 ];
                 $locations[] = $insertItem;

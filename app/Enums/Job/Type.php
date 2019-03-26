@@ -1,20 +1,20 @@
 <?php
-namespace App\Enums\NotificationAdmin;
+namespace App\Enums\Job;
 
 use App\Enums\BaseEnum;
 
 abstract class Type extends BaseEnum
 {
-    const TICKET = 0;
-    const TICKET_COMMENT = 1;
+    const NORMAL = 0;
+    const HOT = 1;
 
     public static function valueToEnum($value)
     {
         switch ($value) {
             case 0:
-                return self::TICKET;
+                return self::NORMAL;
             case 1:
-                return self::TICKET_COMMENT;
+                return self::HOT;
             default:
                 return null;
         }
@@ -23,9 +23,9 @@ abstract class Type extends BaseEnum
     public static function enumToValue($enum)
     {
         switch ($enum) {
-            case self::TICKET:
+            case self::NORMAL:
                 return 0;
-            case self::TICKET_COMMENT:
+            case self::HOT:
                 return 1;
             default:
                 return null;
