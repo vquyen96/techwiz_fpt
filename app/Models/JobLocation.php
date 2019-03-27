@@ -13,4 +13,14 @@ class JobLocation extends Model
         'job_id',
         'id'
     ];
+
+    public function location()
+    {
+        return $this->belongsTo('App\Models\Location');
+    }
+
+    public function job()
+    {
+        return $this->belongsTo('App\Models\Job');
+    }
 }

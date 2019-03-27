@@ -21,7 +21,7 @@ class CreateSavesTable extends Migration
                 ->onDelete('cascade');
             $table->string('user_id', 15);
             $table->foreign('user_id')
-                ->references('id')->on('user')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->unsignedTinyInteger('status');
             $table->timestamps();

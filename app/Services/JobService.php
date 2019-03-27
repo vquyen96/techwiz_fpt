@@ -34,7 +34,7 @@ class JobService implements JobServiceInterface
 
     public function search($data)
     {
-        $jobs = $this->jobRepository->getActive();
+        $jobs = $this->jobRepository->with(['locations', 'company'])->getActive();
         $search = $data['search'];
         if ($search != null) {
             $jobs = $jobs->where(function ($query) use ($search) {
@@ -126,18 +126,7 @@ class JobService implements JobServiceInterface
 
     public function show($id)
     {
-        return $this->jobRepository->find($id);
-//        $user = $this->userRepository->find(Auth::id());
-//        dd(Auth::id());
-//        $cvs = $user->cvs;
-//        dd($cvs);
-//        $cvs = array_column(json_decode(json_encode($cvs), true), 'id');
-//
-//        $job = $this->jobRepository
-//            ->with(array('jobCvs' => function ($query) use ($cvs) {
-//                $query->whereIn('user_id', $cvs);
-//            }))->find($id);
-//        dd($job);
+        return $this->jobRepository->with(['locations', 'company', 'category'])->find($id);
     }
 
     public function apply($id)

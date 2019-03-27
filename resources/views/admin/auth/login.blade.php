@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'RMT Admin - Login')
+@section('title', 'AMZ - Login')
 
 @section('content')
 
@@ -18,7 +18,7 @@
             <div class="col-xl-4 col-lg-6 col-md-7 my-auto no-padding">
                 <div class="authentication-form mx-auto">
                     <div class="logo-centered">
-                        <a href="#"><img src="{{ asset('assets/img/logo.png') }}" alt="logo"></a>
+                        <a href="#"><img src="{{ asset('public/assets/img/logo.png') }}" alt="logo"></a>
                     </div>
                     <h3>{{ __('locale/auth/login.signin') }}</h3>
                     <form method="POST" action="{{ route('login') }}">
@@ -50,21 +50,21 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-secondary">
                                     @if( \Session::get('website_language', config('app.locale')) === 'en')
-                                        <img src="{{ asset('assets/img/flag/en.svg') }}" alt="" width="20px">
+                                        <img src="{{ asset('public/assets/img/flag/en.svg') }}" alt="" width="20px">
                                     @else
-                                        <img src="{{ asset('assets/img/flag/ja.svg') }}" alt="" width="20px">
+                                        <img src="{{ asset('public/assets/img/flag/ja.svg') }}" alt="" width="20px">
                                     @endif
                                 </button>
                                 <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{  \Session::get('website_language', config('app.locale')) === 'en' ? 'English' : '日本語' }}
                                 </button>
-                                <div class="dropdown-menu">
-                                    @if( \Session::get('website_language', config('app.locale')) === 'en')
-                                        <a class="dropdown-item" href="{{ route('admin.change-language', ['ja']) }}">日本語</a>
-                                    @else
-                                        <a class="dropdown-item" href="{{ route('admin.change-language', ['en']) }}">English</a>
-                                    @endif
-                                </div>
+                                {{--<div class="dropdown-menu">--}}
+                                    {{--@if( \Session::get('website_language', config('app.locale')) === 'en')--}}
+                                        {{--<a class="dropdown-item" href="{{ route('admin.change-language', ['ja']) }}">日本語</a>--}}
+                                    {{--@else--}}
+                                        {{--<a class="dropdown-item" href="{{ route('admin.change-language', ['en']) }}">English</a>--}}
+                                    {{--@endif--}}
+                                {{--</div>--}}
                             </div>
                             <button type="submit" class="btn btn-lg btn-gradient-01">{{ __('locale/auth/login.signin') }}</button>
                         </div>

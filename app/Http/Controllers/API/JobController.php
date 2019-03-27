@@ -90,5 +90,8 @@ class JobController extends Controller
     }
 
     public function save($id)
-    {}
+    {
+        $this->jobService->save($id);
+        return response()->json('OK', 200);
+    }
 }

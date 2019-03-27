@@ -14,7 +14,7 @@
 Route::group([
     'namespace' => 'Admin',
     'prefix' => 'admin',
-    'middleware' => ['admin', 'locale']
+    'middleware' => ['admin']
 ], function () {
     Auth::routes(['register' => false]);
 

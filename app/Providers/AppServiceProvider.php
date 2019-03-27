@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Services\CategoryServiceInterface', 'App\Services\CategoryService');
         $this->app->bind('App\Services\LocationServiceInterface', 'App\Services\LocationService');
         $this->app->bind('App\Services\JobServiceInterface', 'App\Services\JobService');
+        $this->app->bind('App\Services\CvServiceInterface', 'App\Services\CvService');
         $this->app->bind('App\Services\ImageServiceInterface', 'App\Services\ImageService');
         $this->app->bind('App\Services\MailServiceInterface', 'App\Services\MailService');
         $this->app->bind('App\Services\Admin\UserServiceInterface', 'App\Services\Admin\UserService');

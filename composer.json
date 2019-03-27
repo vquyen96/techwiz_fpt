@@ -44,6 +44,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                "kris/laravel-form-builder"
             ]
         }
     },

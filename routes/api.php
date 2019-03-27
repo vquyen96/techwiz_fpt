@@ -50,12 +50,18 @@ Route::group([
         Route::post('/{id}/save', 'JobController@save');
     });
 
+
     Route::group([
-        'prefix' => 'job',
+        'middleware' => 'auth.jwt',
+        'prefix' => 'cv',
     ], function () {
-        Route::get('/', 'JobController@index');
-        Route::get('/{id}', 'JobController@show');
+        Route::get('/user', 'CvController@user');
+        Route::post('/', 'CvController@store');
+        Route::post('/{id}', 'CvController@update');
     });
 
-
+    Route::get('job/', 'JobController@index');
+    Route::get('job/{id}', 'JobController@show');
+    Route::get('cv/', 'CvController@index');
+    Route::get('cv/{id}', 'JobController@show');
 });

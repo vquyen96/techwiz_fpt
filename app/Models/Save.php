@@ -9,8 +9,6 @@ class Save extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    public $table = 'jobs';
-
     public $fillable = [
         'job_id',
         'user_id',

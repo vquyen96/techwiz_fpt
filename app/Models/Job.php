@@ -33,4 +33,22 @@ class Job extends Model
     {
         return $this->hasMany('\App\Models\JobCv');
     }
+
+    public function company()
+    {
+        return $this->belongsTo('App\Models\Company');
+    }
+
+    public function locations()
+    {
+        return $this->belongsToMany(
+            '\App\Models\Location',
+            'job_locations'
+        );
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

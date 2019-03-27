@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\Cv\Status;
+use App\Enums\CV\Type;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -35,7 +37,8 @@ class CreateCvsTable extends Migration
             $table->foreign('category_id')
                 ->references('id')->on('categories')
                 ->onDelete('cascade');
-            $table->unsignedInteger('status');
+            $table->unsignedInteger('type')->default(Type::LOOKING);
+            $table->unsignedInteger('status')->default(Status::ACTIVE);
             $table->string('file')->nullable();
             $table->timestamps();
         });
